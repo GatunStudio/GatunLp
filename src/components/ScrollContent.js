@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useScroll } from "framer-motion";
 import { LoremIpsum } from "./LoremIpsum";
-import wallpaper from "../Dist/wallpaper1.png";
+import wallpaper from "../Dist/wallpaper2.gif";
 import {
   Box,
   Button,
@@ -73,15 +73,18 @@ export default function ScrollContent() {
                 textAlign: "center",
                 textShadow: "0 0 10px #000000",
                 zIndex: "20",
-                display: "none",
+                width: //verify if is in mobile
+                { xs: "80%", sm: "80%", md: "40%", lg: "40%" },
+
+                //display: "none",
               }}
             >
               <Typography
                 variant="h1"
                 sx={{
                   marginTop: "20vh",
-                  fontSize: "3rem",
-                  fontWeight: "700",
+                  fontSize: "4rem",
+                  fontWeight: "1000",
                   letterSpacing: ".3rem",
                   textShadow: "0 0 10px #000000",
                 }}
@@ -92,8 +95,8 @@ export default function ScrollContent() {
               <Typography
                 variant="h5"
                 sx={{
-                  fontSize: "1.5rem",
-                  fontWeight: "400",
+                  fontSize: "2.0rem",
+                  fontWeight: "500",
                   letterSpacing: ".1rem",
                   textShadow: "0 0 10px #000000",
                 }}
@@ -101,17 +104,56 @@ export default function ScrollContent() {
                 {" "}
                 get one, be amazed{" "}
               </Typography>
-            </Box>
+              <Typography
+                variant="h4"
+                sx={{
+                  marginTop: "10vh",
+                  fontSize: "1.5rem",
+                  fontWeight: "500",
+                  letterSpacing: ".1rem", 
+                  textAlign: "center",
+                  textShadow: "0 0 10px #000000",
+                }}
+              >
+               O Seu Destino de Diversão e Tecnologia!
+ 
+              </Typography>   <Typography
+                variant="h5"
+                sx={{
+                  fontSize: "1.5rem",
+                  marginTop: "1vh",
+                  fontWeight: "300",
+                  letterSpacing: ".1rem", 
+                  textAlign: "justify",
+                  textShadow: "0 0 40px #f215ea",
+                }}
+              > 
 
-            <IconButton
-              sx={{
-                position: "absolute",
-                left: "50%",
+Nossa missão na Gatun é levar a emoção dos jogos eletrônicos e a potência da montagem de computadores diretamente para você. Explore o que temos a oferecer e embarque nessa jornada conosco!
+ 
+              </Typography>   <Typography
+                variant="h5"
+                sx={{
+                  fontSize: "1.5rem",
+                  fontWeight: "300",
+                  fontStyle: "italic",
+
+                  marginTop: "1vh",
+                  letterSpacing: ".1rem", 
+                  textAlign: "center",
+                  textShadow: "0 0 10px #000000",
+                }}
+              > 
+Com entusiasmo,
+A Equipe Gatun
+              </Typography>
+              <IconButton
+              sx={{  
                 transform: "translate(-50%, -50%)",
                 color: "white",
-                zIndex: "20",
-                top: "10vh",
-                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                zIndex: "20", 
+                marginTop: "10vh",
+                backgroundColor: "rgba(104, 4, 92, 0.5)",
               }}
               onClick={() => {
                 // find a section
@@ -128,6 +170,9 @@ export default function ScrollContent() {
             >
               <ArrowDownward sx={{ fontSize: "3rem" }} />
             </IconButton>
+            </Box>
+
+  
           </div>
         </motion.div>
       </section>

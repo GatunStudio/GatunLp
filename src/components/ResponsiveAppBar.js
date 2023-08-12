@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -19,12 +20,10 @@ import { motion, useScroll } from "framer-motion";
 const pages = ['Introdução', 'Projetos', 'Saiba mais', 'Contato'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function ResponsiveAppBar() {
-
+function ResponsiveAppBar() { 
   const { scrollYProgress } = useScroll();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  const [anchorElUser, setAnchorElUser] = React.useState(null); 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -40,18 +39,47 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [headerBackground, setHeaderBackground] =  useState('transparent');
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  useEffect(() => {
+    const calculateBackground = () => {
+        if (scrollPosition > 50) {
+          // % of 0 to 350 scrollposition / 100
+          //350 of 350 = 100% 
+          //100 of 350 = 28.57%
+          setHeaderBackground('rgba(59, 15, 113, ' +  (scrollPosition / 350) 
+          + ')');
+        } else if (scrollPosition <= 50) {
+          setHeaderBackground('transparent');
+        }
+    };
+    calculateBackground();
+  }, [scrollPosition]); 
+
   return (
     
     <motion.div
     className="App"
     style = {{
       //change background opacity rgba
-      backgroundColor: `rgba(2, 9, 20, ${scrollYProgress})`,
+      backgroundColor:  headerBackground,
       zIndex: 1000,
       position: "fixed",
     }}
   >
-    <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    <AppBar position="fixed" sx={{ 
+      backgroundColor:  headerBackground,zIndex: (theme) => theme.zIndex.drawer + 1 }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>

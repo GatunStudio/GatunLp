@@ -4,12 +4,20 @@ import ScrollContent from "./components/ScrollContent";
 
 function App() {
   const theme = createTheme({
+    typography: {
+      "fontFamily": ` Vina Sans , sans-serif`,
+      "fontSize": 14,
+      "fontWeightLight": 300,
+      "fontWeightRegular": 400,
+      "fontWeightMedium": 500
+     },
     palette: {
       primary: {
         main: "#4E63D9",
         dark: "#051a3b",
         text: "#FFFFFF",
       },
+      
       secondary: {
         main: "#1E2759",
         text: "#ffe5fd",
@@ -32,7 +40,7 @@ function App() {
     <div
       className="App"
       style={{
-        backgroundColor: "#020914",
+        backgroundColor: "#020914", 
       }}
     >
       <ThemeProvider theme={theme}>
