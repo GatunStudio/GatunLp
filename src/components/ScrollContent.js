@@ -68,7 +68,7 @@ export default function ScrollContent() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
         >
           <Grid container 
             spacing={0}
@@ -128,6 +128,8 @@ export default function ScrollContent() {
                 sx={{
                   fontSize: "1.5rem",
                   marginTop: "1vh",
+                  marginLeft: "2vw",
+                  marginRight: "2vw",
                   fontWeight: "300",
                   letterSpacing: ".1rem", 
                   textAlign: "justify",
@@ -188,8 +190,8 @@ A Equipe Gatun
               <img
                src = {logo}
                 style={{
-                  height: "40vh",
-                  width: "40vh", 
+                  height: "50vh",
+                  width: "50vh", 
                   marginTop: "20vh", 
                   marginLeft: "10vw", 
                 }}
@@ -213,8 +215,8 @@ A Equipe Gatun
         <Box>
           <p
             style={{
-              fontSize: "2rem",
-              fontWeight: "400",
+              fontSize: "3rem",
+              fontWeight: "500",
               letterSpacing: ".1rem",
               textAlign: "center",
               textShadow: "0 0 10px #000000",
@@ -237,6 +239,9 @@ A Equipe Gatun
             }}
           >
             <Grid container spacing={3} justifyContent={"center"}
+            sx = {{
+              paddingX: "5vw",
+            }}
 
 
             
@@ -332,7 +337,7 @@ A Equipe Gatun
                         Montamos seu PC
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Montamos seu PC Gamer, Workstation ou para uso doméstico
+                        Temos super máquinas para você
                       </Typography>
                     </CardContent>
                   </Card>
@@ -424,7 +429,7 @@ A Equipe Gatun
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               animate={{
                 opacity: 1,
                 y: 0,
@@ -528,7 +533,7 @@ A Equipe Gatun
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
                     delay: 0.2} }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   animate={{ 
                     y: 0,
                     transition: {
@@ -554,7 +559,7 @@ A Equipe Gatun
                   initial={{ opacity: 0,  x: 50 }}
                   whileInView={{ opacity: 1, x:0, transition: { duration: 0.5,
                     delay: 0.5} }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   animate={{ 
                     x: 0,
                     transition: {
@@ -595,7 +600,7 @@ A Equipe Gatun
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
                           delay: 0.7} }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         animate={{ 
                           y: 0,
                           transition: {
@@ -660,7 +665,7 @@ A Equipe Gatun
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
                     delay: 0.9} }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   animate={{ 
                     y: 0,
                     transition: {
@@ -714,7 +719,7 @@ A Equipe Gatun
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
                     delay: 1.1} }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   animate={{ 
                     y: 0,
                     transition: {
@@ -778,7 +783,7 @@ A Equipe Gatun
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
                     delay: 0.2} }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   animate={{ 
                     y: 0,
                     transition: {
@@ -804,7 +809,7 @@ A Equipe Gatun
                   initial={{ opacity: 0,  x: 50 }}
                   whileInView={{ opacity: 1, x:0, transition: { duration: 0.5,
                     delay: 0.5} }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   animate={{ 
                     x: 0,
                     transition: {
@@ -845,7 +850,7 @@ A Equipe Gatun
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
                           delay: 0.7} }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         animate={{ 
                           y: 0,
                           transition: {
@@ -910,7 +915,7 @@ A Equipe Gatun
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
                     delay: 0.9} }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   animate={{ 
                     y: 0,
                     transition: {
@@ -964,7 +969,7 @@ A Equipe Gatun
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
                     delay: 1.1} }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   animate={{ 
                     y: 0,
                     transition: {
@@ -1020,6 +1025,7 @@ A Equipe Gatun
                         <motion.div 
                         initial="hidden"
                         animate="visible"
+                        className="footer"
                         transition={{ duration: 1.5 }}
                       >
 
@@ -1075,6 +1081,7 @@ A Equipe Gatun
                     <Instagram sx={{ fontSize: "3rem" }} />
                   </IconButton>
                 </Box>
+                  <div style = {{width: "100%", height: "10vh"}}></div>
               </Box>
             </motion.div>
           </section>

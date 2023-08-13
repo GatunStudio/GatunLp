@@ -17,7 +17,63 @@ import logo from '../Dist/logo.png';
 
 import { motion, useScroll } from "framer-motion";
 
-const pages = ['Introdução', 'Projetos', 'Saiba mais', 'Contato'];
+const pages = ['Introdução', 'Soluções', 'Sobre nós', 'Portfólio', 'Contato'];
+const click = [() => {
+  // find a section 
+  // scroll to that section - 100px 
+    window.scrollTo({ top: 0, behavior: "smooth" });
+},
+
+() => {
+  // find a section
+  const section = document.querySelector(".Solution");
+  // scroll to that section - 100px
+  if (section) {
+    let newSection =
+      section.getBoundingClientRect().top +
+      window.pageYOffset -
+      200;
+    window.scrollTo({ top: newSection, behavior: "smooth" });
+  }
+}
+, () => {
+  // find a section
+  const section = document.querySelector(".more");
+  // scroll to that section - 100px
+  if (section) {
+    let newSection =
+      section.getBoundingClientRect().top +
+      window.pageYOffset -
+      200;
+    window.scrollTo({ top: newSection, behavior: "smooth" });
+  }
+}, 
+() => {
+   // scroll to the end
+    const section = document.querySelector(".tripulantes");
+    // scroll to that section - 100px
+    if (section) {
+      let newSection =
+        section.getBoundingClientRect().top +
+        window.pageYOffset -
+        200;
+      window.scrollTo({ top: newSection, behavior: "smooth" });
+    }
+}, 
+() => {
+   // scroll to the end
+    const section = document.querySelector(".footer");
+    // scroll to that section - 100px
+    if (section) {
+      let newSection =
+        section.getBoundingClientRect().top +
+        window.pageYOffset -
+        200;
+      window.scrollTo({ top: newSection, behavior: "smooth" });
+    }
+}
+];
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() { 
@@ -93,7 +149,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            onAbort={click[0]}
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -105,7 +161,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            GΛTUN
+            GATUN
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }  }}>
@@ -138,7 +194,9 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={
+                  click[pages.indexOf(page)]
+                }>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -170,7 +228,7 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={ click[pages.indexOf(page)]}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
