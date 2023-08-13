@@ -190,11 +190,15 @@ A Equipe Gatun
               <img
                src = {logo}
                 style={{
-                  height: "50vh",
-                  width: "50vh", 
+                  height: 
+                  window.innerWidth > 600 ? "50vh" : "50vw",
+                  width:  
+                  window.innerWidth > 600 ? "50vh" : "50vw",
                   marginTop: "20vh", 
-                  marginLeft: "10vw", 
+                  alignSelf: "center",
+                  marginLeft:  window.innerWidth > 600 ? "10vw" : "25%",
                 }}
+              
                 alt = ""
               />
 
