@@ -74,6 +74,7 @@ function ResponsiveAppBar() {
     style = {{
       //change background opacity rgba
       backgroundColor:  headerBackground,
+       
       zIndex: 1000,
       position: "fixed",
     }}
@@ -84,7 +85,8 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} > 
+          <Box sx={{ display: { xs: 'none', md: 'flex' },
+      opacity: scrollPosition / 100 + 0.0, mr: 1 }} > 
           <img src={logo}  width="50px"/>
             </Box>
           <Typography
@@ -99,13 +101,14 @@ function ResponsiveAppBar() {
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
+              
               textDecoration: 'none',
             }}
           >
-            GATUN
+            GΛTUN
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }  }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -155,10 +158,11 @@ function ResponsiveAppBar() {
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
+              letterSpacing: '.3rem', 
+              opacity: scrollPosition / 100 + 0.6,
               textDecoration: 'none',
-            }}
+              
+            }} 
           >
             GATUN
           </Typography>

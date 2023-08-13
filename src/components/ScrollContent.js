@@ -2,27 +2,51 @@ import React from "react";
 import { motion, useScroll } from "framer-motion";
 import { LoremIpsum } from "./LoremIpsum";
 import wallpaper from "../Dist/wallpaper2.gif";
+import logo from "../Dist/logo.png";
+import rhyan from "../Dist/rhyan.jpg";
+import rhyan1 from "../Dist/rhyan01.png";
+import rhyan2 from "../Dist/rhyan02.png";
+import rhyan3 from "../Dist/rhyan03.png";
+
+import caique from "../Dist/caique.jpg";
+import cuco from "../Dist/cucoproject.png";
+import finapp from "../Dist/finapp.png";
+import horrorgame from "../Dist/horrorgame.png";
+import combatviewer from "../Dist/combatviewer.jpg";
 import {
+  Avatar,
   Box,
   Button,
   Card,
   CardContent,
+  CardHeader,
   CardMedia,
+  Divider,
   Grid,
   IconButton,
   Typography,
 } from "@mui/material";
-import { ArrowDownward, GitHub, LinkedIn, WebAsset } from "@mui/icons-material";
+import { ArrowDownward, GitHub, Instagram, LinkedIn, WebAsset } from "@mui/icons-material";
 import BuildCircleIcon from "@mui/icons-material/BuildCircle";
 import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
-import ApiIcon from "@mui/icons-material/Api";
-
+import ApiIcon from "@mui/icons-material/Api"; 
+import './animatedStyle.css';
 export default function ScrollContent() {
   const { scrollYProgress } = useScroll();
   console.log("scroll", scrollYProgress);
-  return (
-    <>
+  return [
+    <div
+      style={{  
+        // gradient background
+        background: 'radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)',
+        
+        // background: linear-gradient(180deg, #000000 0%, #090a0f 100%);
+      }}
+
+
+    > 
+    <div id='stars3'></div> 
       {/*<motion.div
         className="progress-bar"
         style={{ 
@@ -46,38 +70,18 @@ export default function ScrollContent() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
         >
-          <div
-            style={{
-              backgroundImage: `url(${wallpaper})`,
-              backgroundSize: "cover",
-              backgroundPosition: "left",
-              backgroundRepeat: "no-repeat",
-              height: "120vh",
-              width: "100%",
-              position: "relative",
-              top: "0",
-              left: "0",
-              zIndex: "40",
-            }}
+          <Grid container 
+            spacing={0}
           >
-            <Box
-              sx={{
-                position: "absolute",
-                top: "0%",
-                left: "10%",
-                color: "white",
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                fontSize: "3rem",
-                textAlign: "center",
-                textShadow: "0 0 10px #000000",
-                zIndex: "20",
-                width: //verify if is in mobile
-                { xs: "80%", sm: "80%", md: "40%", lg: "40%" },
+            <Grid item
+            //in large screens 6, in cellphone 12
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
 
-                //display: "none",
-              }}
+               
             >
               <Typography
                 variant="h1"
@@ -86,6 +90,7 @@ export default function ScrollContent() {
                   fontSize: "4rem",
                   fontWeight: "1000",
                   letterSpacing: ".3rem",
+                  textAlign: "center",
                   textShadow: "0 0 10px #000000",
                 }}
               >
@@ -96,6 +101,7 @@ export default function ScrollContent() {
                 variant="h5"
                 sx={{
                   fontSize: "2.0rem",
+                  textAlign: "center",
                   fontWeight: "500",
                   letterSpacing: ".1rem",
                   textShadow: "0 0 10px #000000",
@@ -149,7 +155,8 @@ A Equipe Gatun
               </Typography>
               <IconButton
               sx={{  
-                transform: "translate(-50%, -50%)",
+                left: "45%",
+
                 color: "white",
                 zIndex: "20", 
                 marginTop: "10vh",
@@ -170,10 +177,27 @@ A Equipe Gatun
             >
               <ArrowDownward sx={{ fontSize: "3rem" }} />
             </IconButton>
-            </Box>
+            </Grid>
 
-  
-          </div>
+            <Grid item 
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6} >
+              <img
+               src = {logo}
+                style={{
+                  height: "40vh",
+                  width: "40vh", 
+                  marginTop: "20vh", 
+                  marginLeft: "10vw", 
+                }}
+                alt = ""
+              />
+
+          </Grid>
+          </Grid>
         </motion.div>
       </section>
       <div
@@ -200,18 +224,31 @@ A Equipe Gatun
             Soluções{" "}
           </p>
         </Box>
-        <section className="Solution">
+        <section className="Solution" 
+        >
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}
+            style = {{
+              alignSelf: "center",
+              justifySelf: "center",
+              width: "100%", 
+            }}
           >
-            <Grid container spacing={0} justifyContent={"center"}
+            <Grid container spacing={3} justifyContent={"center"}
+
+
             
             >
               <Grid item xs={12} sm={6} md={3}>
                 <Box sx={{ textAlign: "center" }}>
-                  <Card sx={{ maxWidth: 345 }}>
+                  <Card 
+                  style = {{
+                    //gradient
+                    background: "linear-gradient(45deg, #3c0d7f97 30%, #262891 90%)",
+                  }}
+                  >
                     <CardMedia height="140">
                       <WebAsset
                         sx={{
@@ -239,7 +276,12 @@ A Equipe Gatun
               </Grid>
               <Grid item xs={12} sm={6} md={3}>
                 <Box sx={{ textAlign: "center" }}>
-                  <Card sx={{ maxWidth: 345 }}>
+                  <Card 
+                  style = {{
+                    //gradient
+                    background: "linear-gradient(45deg, #0d3c7f97 30%, #612691 90%)",
+                  }}
+                  >
                     <CardMedia height="140">
                       <DeveloperModeIcon
                         sx={{
@@ -267,7 +309,10 @@ A Equipe Gatun
               </Grid>
               <Grid item xs={12} sm={6} md={3}>
                 <Box sx={{ textAlign: "center" }}>
-                  <Card sx={{ maxWidth: 345 }}>
+                  <Card  style = {{
+                    //gradient
+                    background: "linear-gradient(45deg, #47139097 30%, #267191 90%)",
+                  }}>
                     <CardMedia height="140">
                       <BuildCircleIcon
                         sx={{
@@ -295,7 +340,12 @@ A Equipe Gatun
               </Grid>
               <Grid item xs={12} sm={6} md={3}>
                 <Box sx={{ textAlign: "center" }}>
-                  <Card sx={{ maxWidth: 345 }}>
+                  <Card  
+                  style = {{
+                    //gradient
+                    background: "linear-gradient(45deg, #660d7f97 30%, #262891 90%)",
+                  }}
+                  >
                     <CardMedia height="140">
                       <VideogameAssetIcon
                         sx={{
@@ -347,11 +397,21 @@ A Equipe Gatun
               <ArrowDownward sx={{ fontSize: "3rem" }} />
             </IconButton>
           </motion.div>
-        </section>
+        </section> 
+      </div>,
+        <div
+      style={{  
+        // gradient background
+        background:   "linear-gradient(180deg, #dd1d1d00 0%, #420354 100%)",
+        // background: linear-gradient(180deg, #000000 0%, #090a0f 100%);
+      }}
 
+
+    >  
+    <div id='stars2'></div> 
         <div
           style={{
-            marginTop: "80vh",
+            marginTop: "50vh",
             width: "100%",
             position: "relative",
             top: "0",
@@ -359,6 +419,7 @@ A Equipe Gatun
             zIndex: "10",
           }}
         >
+          <a href="#sobre"></a>
           <section className="more">
             <motion.div
               initial={{ opacity: 0, y: 100 }}
@@ -380,7 +441,7 @@ A Equipe Gatun
                     fontWeight: "400",
                     letterSpacing: ".1rem",
                     textAlign: "center",
-                    textShadow: "0 0 10px #000000",
+                    textShadow: "0 0 10px #550548",
                   }}
                 >
                   {" "}
@@ -392,17 +453,56 @@ A Equipe Gatun
                     fontSize: "1.5rem",
                     fontWeight: "400",
                     letterSpacing: ".1rem",
-                    textAlign: "center",
+                    textAlign: "justify",
+                    margin: "0 10vw",
                     textShadow: "0 0 10px #000000",
                   }}
                 >
                   {" "}
-                  Somos uma empresa de desenvolvimento de software e hardware,
-                  com foco em soluções para o seu negócio.{" "}
+                  Nossa jornada começou com a visão de proporcionar algo mais do que apenas produtos; queríamos construir pontes entre os jogadores e seus sonhos virtuais, entre as demandas de desempenho e as máquinas que as concretizam. Desde então, temos nos dedicado incansavelmente a essa visão, trabalhando para oferecer produtos e serviços que não apenas atendam às expectativas, mas as superem.
                 </Typography>
-              </Box>
-              <Box sx={{ textAlign: "center", marginTop: "10vh" }}>
                 <Typography
+                  variant="h5"
+                  sx={{
+                    fontSize: "1.5rem",
+                    fontWeight: "400",
+                    letterSpacing: ".1rem",
+                    textAlign: "justify",
+                    margin: "2vh 10vw",
+                    textShadow: "0 0 10px #000000",
+                  }}
+                >
+                  {" "}
+                  Agradecemos por fazer parte da nossa jornada até agora e esperamos que você se junte a nós para explorar os limites do entretenimento digital e da tecnologia de ponta. Bem-vindo à Gatun, onde a diversão encontra a tecnologia e os sonhos ganham vida.
+                  </Typography>
+                  <IconButton
+              sx={{ 
+                color: "white",
+                zIndex: "20",
+                top: "20vh",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+              }}
+              onClick={() => {
+                // find a section
+                const section = document.querySelector(".tripulantes");
+                // scroll to that section - 100px
+                if (section) {
+                  let newSection =
+                    section.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    200;
+                  window.scrollTo({ top: newSection, behavior: "smooth" });
+                }
+              }}
+            >
+              <ArrowDownward sx={{ fontSize: "3rem" }} />
+            </IconButton>
+              </Box>
+ 
+ </motion.div> 
+              <Box sx={{ textAlign: "center", marginTop: "60vh" }}>
+                <Typography
+                  className="tripulantes"
                   variant="h3"
                   sx={{
                     fontSize: "2rem",
@@ -413,10 +513,517 @@ A Equipe Gatun
                   }}
                 >
                   {" "}
-                  Temos os melhores profissionais{" "}
+                  O melhor da nossa nave são os tripulantes {" "}
                 </Typography>
+                
               </Box>
-              <Box sx={{ textAlign: "center", marginTop: "10vh" }}>
+              <Grid container spacing={2} sx={{ marginTop: "5vh", padding:'20px' }}>
+                <Grid item 
+              xs={12}
+              sm={12}
+              md={3}
+              lg={3}
+              xl={3}>
+                 <motion.div 
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
+                    delay: 0.2} }}
+                  viewport={{ once: false }}
+                  animate={{ 
+                    y: 0,
+                    transition: {
+                      duration: 0.5,
+                      delay: 0.2,
+                    },
+                    
+                  }}
+                >
+                  <Avatar 
+                  alt="Caique Ponjjar"
+                  src={caique}
+                  sx={{
+                    width: "25vh",
+                    height: "25vh",
+                    margin: "0 auto",
+                    marginTop: "5vh",
+                    border: "solid 5px #550548",
+                  }}
+                  />
+</motion.div>
+<motion.div 
+                  initial={{ opacity: 0,  x: 50 }}
+                  whileInView={{ opacity: 1, x:0, transition: { duration: 0.5,
+                    delay: 0.5} }}
+                  viewport={{ once: false }}
+                  animate={{ 
+                    x: 0,
+                    transition: {
+                      duration: 0.5,
+                      delay: 0.5,
+                    },
+                    
+                  }}
+                >
+                  <Typography
+                  variant="h5"
+                  sx={{
+                    fontSize: "2.0rem",
+                    fontWeight: "400",
+                    marginTop: "1vh",
+                    letterSpacing: ".1rem",
+                    textAlign: "center", 
+                    textShadow: "0 0 10px #000000", 
+                  }}
+                >
+                  Caique Ponjjar
+                 </Typography> </motion.div>
+
+                    
+                
+
+                  
+                  </Grid> 
+                  <Grid item
+                  xs={12}
+                  sm={12}
+                  md={3}
+                  lg={3}
+                  xl={3}
+                  >
+
+<motion.div 
+                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                        whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
+                          delay: 0.7} }}
+                        viewport={{ once: false }}
+                        animate={{ 
+                          y: 0,
+                          transition: {
+                            duration: 0.5,
+                            delay: 1.5,
+                          },
+                          
+                        }}
+                      >
+
+                    <Card  
+                    >
+                      <CardHeader 
+                      title="Cuco"
+                      sx={{
+                        textAlign: "center",
+                        fontSize: "2.0rem",
+                        fontWeight: "800", 
+                        letterSpacing: ".1rem",
+                        textShadow: "0 0 10px #f710ae",
+                      }}
+                      />
+                      <CardMedia
+                      component="img"
+                      src = {cuco}
+                      alt="cuco"
+                      sx={{
+                        width: "100%",
+                        height: "250px",  
+                        border: "solid 5px #550548",
+                        borderRadius: "20px", 
+                      }}
+                      />
+                      
+                      <CardContent>
+                        <Typography
+                        variant="h6"
+                        sx={{
+                          textAlign: "justify",
+                        }} 
+                      >  Aplicativo de anotações dinâmico disponivel na playstore.  </Typography>
+                      </CardContent>
+                    </Card>
+                    </motion.div>
+
+
+
+
+                        
+
+
+                  
+                  </Grid>
+              
+                  <Grid item
+                  xs={12}
+                  sm={12}
+                  md={3}
+                  lg={3}
+                  xl={3}
+                  >    <motion.div 
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
+                    delay: 0.9} }}
+                  viewport={{ once: false }}
+                  animate={{ 
+                    y: 0,
+                    transition: {
+                      duration: 0.5,
+                      delay: 1.7,
+                    },
+                    
+                  }}
+                >
+                   <Card >
+                   <CardHeader 
+                      title="The Night Trees"
+                      sx={{
+                        textAlign: "center",
+                        fontSize: "2.0rem",
+                        fontWeight: "800", 
+                        letterSpacing: ".1rem",
+                        textShadow: "0 0 10px #f710ae",
+                      }}
+                      />
+                      <CardMedia
+                      component="img"
+                      src = {horrorgame}
+                      alt=""
+                      sx={{
+                        width: "100%",
+                        height: "250px",   
+                        border: "solid 5px #550548",
+                      }}
+                      />
+                      <CardContent>
+                      <Typography
+                        variant="h6" 
+                        sx = {{
+                          textAlign: "justify",
+
+                                                  }}  > 
+                         Jogo de terror multiplayer com mais de 1000 downloads. 
+                        </Typography>
+                      </CardContent>
+                    </Card> 
+                    </motion.div>
+                    </Grid> 
+                    <Grid item
+                  xs={12}
+                  sm={12}
+                  md={3}
+                  lg={3}
+                  xl={3}
+                  > <motion.div 
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
+                    delay: 1.1} }}
+                  viewport={{ once: false }}
+                  animate={{ 
+                    y: 0,
+                    transition: {
+                      duration: 0.5,
+                      delay: 1.7,
+                    },
+                    
+                  }}
+                >
+                    <Card  
+                    >
+                      <CardHeader 
+                      title="CombatViewer"
+                      sx={{
+                        textAlign: "center",
+                        fontSize: "2.0rem",
+                        fontWeight: "800", 
+                        letterSpacing: ".1rem",
+                        textShadow: "0 0 10px #f710ae",
+                      }}
+                      />
+                      <CardMedia
+                      component="img"
+                      src = {combatviewer}
+                      alt=""
+                      sx={{
+                        width: "100%",
+                        height: "250px",  
+                        border: "solid 5px #550548",
+                        borderRadius: "20px", 
+                      }}
+                      />
+                      
+                      <CardContent>
+                        <Typography
+                        variant="h6"
+                        sx={{
+                          textAlign: "justify",
+                        }} 
+                      >  Visualizador em um caixão de areia utilizado pelo Exército Brasileiro  </Typography>
+                      </CardContent>
+                    </Card>
+</motion.div>
+
+
+
+                        
+
+
+                  
+                  </Grid>
+                  </Grid> 
+                  <Grid container spacing={2} sx={{ marginTop: "0vh", paddingX:'20px' }}>
+                <Grid item 
+              xs={12}
+              sm={12}
+              md={3}
+              lg={3}
+              xl={3}>
+                 <motion.div 
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
+                    delay: 0.2} }}
+                  viewport={{ once: false }}
+                  animate={{ 
+                    y: 0,
+                    transition: {
+                      duration: 0.5,
+                      delay: 0.2,
+                    },
+                    
+                  }}
+                >
+                  <Avatar 
+                  alt="Rhyan Michelin"
+                  src={rhyan}
+                  sx={{
+                    width: "25vh",
+                    height: "25vh",
+                    margin: "0 auto",
+                    marginTop: "5vh",
+                    border: "solid 5px #550548",
+                  }}
+                  />
+</motion.div>
+<motion.div 
+                  initial={{ opacity: 0,  x: 50 }}
+                  whileInView={{ opacity: 1, x:0, transition: { duration: 0.5,
+                    delay: 0.5} }}
+                  viewport={{ once: false }}
+                  animate={{ 
+                    x: 0,
+                    transition: {
+                      duration: 0.5,
+                      delay: 0.5,
+                    },
+                    
+                  }}
+                >
+                  <Typography
+                  variant="h5"
+                  sx={{
+                    fontSize: "2.0rem",
+                    fontWeight: "400",
+                    marginTop: "1vh",
+                    letterSpacing: ".1rem",
+                    textAlign: "center", 
+                    textShadow: "0 0 10px #000000", 
+                  }}
+                >
+                  Rhyan Michelin
+                 </Typography> </motion.div>
+
+                    
+                
+
+                  
+                  </Grid> 
+                  <Grid item
+                  xs={12}
+                  sm={12}
+                  md={3}
+                  lg={3}
+                  xl={3}
+                  >
+
+<motion.div 
+                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                        whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
+                          delay: 0.7} }}
+                        viewport={{ once: false }}
+                        animate={{ 
+                          y: 0,
+                          transition: {
+                            duration: 0.5,
+                            delay: 1.5,
+                          },
+                          
+                        }}
+                      >
+
+                    <Card  
+                    >
+                      <CardHeader 
+                      title="Capa Twitter"
+                      sx={{
+                        textAlign: "center",
+                        fontSize: "2.0rem",
+                        fontWeight: "800", 
+                        letterSpacing: ".1rem",
+                        textShadow: "0 0 10px #f710ae",
+                      }}
+                      />
+                      <CardMedia
+                      component="img"
+                      src = {rhyan1}
+                      alt="capa twitter"
+                      sx={{
+                        width: "100%",
+                        height: "250px",  
+                        border: "solid 5px #550548",
+                        borderRadius: "20px", 
+                      }}
+                      />
+                      
+                      <CardContent>
+                        <Typography
+                        variant="h6"
+                        sx={{
+                          textAlign: "justify",
+                        }} 
+                      >   Artes e Design de personagens </Typography>
+                      </CardContent>
+                    </Card>
+                    </motion.div>
+
+
+
+
+                        
+
+
+                  
+                  </Grid>
+              
+                  <Grid item
+                  xs={12}
+                  sm={12}
+                  md={3}
+                  lg={3}
+                  xl={3}
+                  >    <motion.div 
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
+                    delay: 0.9} }}
+                  viewport={{ once: false }}
+                  animate={{ 
+                    y: 0,
+                    transition: {
+                      duration: 0.5,
+                      delay: 1.7,
+                    },
+                    
+                  }}
+                >
+                   <Card >
+                   <CardHeader 
+                      title="Post Bolo de Chocolate "
+                      sx={{
+                        textAlign: "center",
+                        fontSize: "2.0rem",
+                        fontWeight: "800", 
+                        letterSpacing: ".1rem",
+                        textShadow: "0 0 10px #f710ae",
+                      }}
+                      />
+                      <CardMedia
+                      component="img"
+                      src = {rhyan2}
+                      alt=""
+                      sx={{
+                        width: "100%",
+                        height: "250px",   
+                        border: "solid 5px #550548",
+                      }}
+                      />
+                      <CardContent>
+                      <Typography
+                        variant="h6" 
+                        sx = {{
+                          textAlign: "justify",
+
+                                                  }}  > 
+                          Social Media para produtos
+                        </Typography>
+                      </CardContent>
+                    </Card> 
+                    </motion.div>
+                    </Grid> 
+                    <Grid item
+                  xs={12}
+                  sm={12}
+                  md={3}
+                  lg={3}
+                  xl={3}
+                  > <motion.div 
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 0.5,
+                    delay: 1.1} }}
+                  viewport={{ once: false }}
+                  animate={{ 
+                    y: 0,
+                    transition: {
+                      duration: 0.5,
+                      delay: 1.7,
+                    },
+                    
+                  }}
+                >
+                    <Card  
+                    >
+                      <CardHeader 
+                      title="Ilustração Gaara"
+                      sx={{
+                        textAlign: "center",
+                        fontSize: "2.0rem",
+                        fontWeight: "800", 
+                        letterSpacing: ".1rem",
+                        textShadow: "0 0 10px #f710ae",
+                      }}
+                      />
+                      <CardMedia
+                      component="img"
+                      src = {rhyan3}
+                      alt=""
+                      sx={{
+                        width: "100%",
+                        height: "250px",  
+                        border: "solid 5px #550548",
+                        borderRadius: "20px", 
+                      }}
+                      />
+                      
+                      <CardContent>
+                        <Typography
+                        variant="h6"
+                        sx={{
+                          textAlign: "justify",
+                        }} 
+                      >  Ilustrações e Desenhos digitais   </Typography>
+                      </CardContent>
+                    </Card>
+</motion.div>
+
+
+
+                        
+
+
+                  
+                  </Grid>
+                  </Grid>
+                        <motion.div 
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ duration: 1.5 }}
+                      >
+
+              <Box sx={{ textAlign: "center", marginTop: "30vh" }}>
                 <Typography
                   variant="h3"
                   sx={{
@@ -458,6 +1065,14 @@ A Equipe Gatun
                     }
                   >
                     <GitHub sx={{ fontSize: "3rem" }} />
+                  </IconButton> <IconButton
+                    aria-label="instagram"
+                    sx={{ color: "#ff6af0" }}
+                    onClick={() =>
+                      window.open("https://instagram.com/GatunStudio", "_blank")
+                    }
+                  >
+                    <Instagram sx={{ fontSize: "3rem" }} />
                   </IconButton>
                 </Box>
               </Box>
@@ -465,6 +1080,6 @@ A Equipe Gatun
           </section>
         </div>
       </div>
-    </>
-  );
+    </div>
+  ];
 }

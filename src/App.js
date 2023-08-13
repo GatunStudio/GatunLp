@@ -2,14 +2,15 @@ import { Box, Button, ThemeProvider, createTheme } from "@mui/material";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 import ScrollContent from "./components/ScrollContent";
 
+
 function App() {
   const theme = createTheme({
     typography: {
       "fontFamily": ` Vina Sans , sans-serif`,
       "fontSize": 14,
-      "fontWeightLight": 300,
-      "fontWeightRegular": 400,
-      "fontWeightMedium": 500
+      "fontWeightLight": 500,
+      "fontWeightRegular": 700,
+      "fontWeightMedium": 1000
      },
     palette: {
       primary: {
@@ -45,9 +46,9 @@ function App() {
     >
       <ThemeProvider theme={theme}>
         <ResponsiveAppBar />
-        <Box style={{marginTop:"64px"}}>
+        <div style={{marginTop:"64px", width:'100%'}}>
           <ScrollContent />
-        </Box>
+        </div>
       </ThemeProvider>
     </div>
   );
